@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# this pring Best School ten times
+files=$(ls)
+for file in $files
+do
+echo $file | tr  '-'
+done
