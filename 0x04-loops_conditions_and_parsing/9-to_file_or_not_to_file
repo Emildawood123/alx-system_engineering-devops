@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# this pring Best School ten times
+if  test -f school
+then
+echo "school file exists"
+if test -s school
+then
+echo "school file is not empty"
+else
+echo "school file is empty"
+fi
+if ! test -d school
+then
+echo "school is a regular file"
+fi
+else
+echo "school file does not exists"
+fi
