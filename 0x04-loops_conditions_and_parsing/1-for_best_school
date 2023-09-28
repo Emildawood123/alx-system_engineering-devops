@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+# this pring Best School ten times
 for (( c=0; c<10; c++))
 do
 echo "Best School"
