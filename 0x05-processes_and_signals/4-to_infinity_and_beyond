@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #print list your processes
-while [ true ]
+while true
 do
 echo "To infinity and beyond"
 sleep 2
