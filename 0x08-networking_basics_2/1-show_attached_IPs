@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#anything for test
+# Get the list of network interfaces
+interfaces=$(ifconfig -a | grep 'inet ' | awk '{print $2}')
+for ip in $interfaces; 
+do
+if [[ $ip =~ ^[0-9]+\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]];
+then
+echo "$ip"
+fi
+done
