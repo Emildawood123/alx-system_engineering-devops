@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# this for connect server by ssh (secure bash) with privite key
+ssh -i ~/.ssh/school ubuntu@100.26.157.113
