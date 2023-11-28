@@ -13,7 +13,6 @@ file{ '/etc/nginx/sites-available/default':
   ensure => 'file',
   content => 'server {
     listen 80 default_server;
-    listen [::]:80 default_server ipv6only=on;
 
     root /var/www/html;
     index index.html index.htm;
