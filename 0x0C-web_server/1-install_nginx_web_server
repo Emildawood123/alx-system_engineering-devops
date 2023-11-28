@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Write a Bash script that transfers a file from our client to a server
+# install nginx and listening on port 80 in server
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
