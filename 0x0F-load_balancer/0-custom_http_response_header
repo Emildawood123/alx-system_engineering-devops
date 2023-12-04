@@ -19,7 +19,7 @@ sudo sh -c 'echo "server {
     }
 
     location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+        return 301 https://myaccount.google.com/u/0/?utm_source=YouTubeWeb&tab=rk&utm_medium=act&tab=rk&hl=en-GB;
     }
 }" > /etc/nginx/sites-available/default'
 sudo service nginx start
