@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# this solve for custom https response header
+sudo get-apt -y update
+sudo get-apt -y install haproxy
+sudo -sh -c 'echo "
+frontend lb-01
+    bind *:80
+    mode http
+    dafualt_backend allservers
+backend allservers
+    balance roundrobin
+    server1 387530-web-01 54.89.57.165
+    server2 387530-web-02 18.207.142.135" > etc/haproxy/ha.cfg'
+sudo service haproxy restart
