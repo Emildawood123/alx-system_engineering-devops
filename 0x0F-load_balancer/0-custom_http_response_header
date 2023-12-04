@@ -10,8 +10,8 @@ sudo sh -c 'echo "server {
     listen [::]:80 default_server ipv6only=on;
 
     root /var/www/html;
-    index index.html index.htm;
-	add_header X-Served-By $(hostname);
+    index index.html;
+	add_header X-Served-By            $(hostname);
     server_name localhost;
     error_page 404 /404.html;
     location / {
