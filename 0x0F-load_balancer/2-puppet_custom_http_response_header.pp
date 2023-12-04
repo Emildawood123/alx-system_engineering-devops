@@ -1,46 +1,32 @@
-# third task
+# funcking the puppet its very ugly
 
-package{ 'nginx':
-  ensure => 'installed',
+exec {'update':
+  provider => shell,
+  command  => 'sudo apt-get -y update',
+  before   => Exec['install Nginx'],
 }
 
-service{ 'nginx':
-  ensure => 'running',
-  enable => 'true',
+exec {'install Nginx':
+  provider => shell,
+  command  => 'sudo apt-get -y install nginx',
+  before   => Exec['add_header'],
 }
 
-file{'/etc/nginx/sites-available/default':
-  ensure  => 'file',
-  content => "server {
-    listen 80 default_server;
-    listen [::]:80 default_server ipv6only=on;
-    add_header X-Served-By ${hostname};
-    root /var/www/html;
-    index index.html index.htm;
-    server_name localhost;
-    error_page 404 /404.html;
-    location / {
-        try_files \$uri \$uri/ =404;
-    }
-
-    location /redirect_me {
-        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
-    }
-}",
-  require => Package['nginx'],
-  notify  => Service['nginx'],
-  replace => 'true',
+exec { 'add_header':
+  provider    => shell,
+  environment => ["HOST=${hostname}"],
+  command     => 'sudo sed -i "s/include \/etc\/nginx\/sites-enabled\/\*;/include \/etc\/nginx\/sites-enabled\/\*;\n\tadd_header X-Served-By \"$HOST\";/" /etc/nginx/nginx.conf',
+  before      => Exec['restart Nginx'],
 }
 
-file {'/var/www/html/index.html':
-  ensure  => 'file',
-  content => 'Hello World!',
-  require => Package['nginx'],
-  notify  => Service['nginx'],
-  }
+exec { 'restart Nginx':
+  provider => shell,
+  command  => 'sudo service nginx restart',
+}
 
-file {'/var/www/html/404.html':
-  ensure  => 'file',
-  content => "Ceci n'est pas une page",
-  require => Package['nginx'],
-  notify  => Service['nginx'],}
+file_line { ' creating a custom HTTP header response':
+  path  => '/etc/nginx/sites-available/default',
+  line  => '		add_header X-Served-By $hostname;',
+	after  => '^\s*server\s*\{',
+  ensure => present,
+}
