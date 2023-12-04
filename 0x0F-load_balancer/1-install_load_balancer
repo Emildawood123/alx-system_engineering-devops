@@ -7,8 +7,10 @@ frontend lb-01
     bind *:80
     mode http
     dafualt_backend allservers
+
+
 backend allservers
     balance roundrobin
-    server1 387530-web-01 54.89.57.165:80
-    server2 387530-web-02 18.207.142.135:80" > etc/haproxy/ha.cfg'
+    server 387530-web-01 54.89.57.165:80
+    server 387530-web-02 18.207.142.135:80" > etc/haproxy/ha.cfg'
 sudo service haproxy restart
