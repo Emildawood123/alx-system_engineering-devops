@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# use docker for listen all server in port 80
+sudo docker run -p 80 -d nginx
+service nginx restart
