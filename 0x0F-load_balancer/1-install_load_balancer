@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # this solve for custom https response header
-sudo get-apt -y update
-sudo get-apt -y install haproxy
+sudo apt-get -y update
+sudo apt-get -y install haproxy
 sudo -sh -c 'echo "
 frontend lb-01
     bind *:80
