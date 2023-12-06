@@ -2,4 +2,4 @@
 # advanced task and specfic prot
 sudo sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 sudo service nginx restart
-sudo service nginx stop
+pkill --oldest nginx
