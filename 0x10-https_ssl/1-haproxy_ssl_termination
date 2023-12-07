@@ -8,5 +8,5 @@ frontend http_front
 backend webservers
         balance roundrobin
         mode http
-        server 387530-web-01 54.89.57.165
-        server 387530-web-02 18.207.142.135
+        server 387530-web-01 54.89.57.165:80
+        server 387530-web-02 18.207.142.135:80
