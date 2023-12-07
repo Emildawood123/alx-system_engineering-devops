@@ -1,12 +1,11 @@
-frontend http_front
-        bind *:80
-        bind *:443 ssl crt /etc/haproxy/certs/www.realemildawood.tech.pem
-        redirect scheme https code 301 if !{ ssl_fc }
-        mode http
-        default_backend webservers
+frontend lb-01
+    bind *:80
+    bind *:443 ssl crt /home/ubuntu/haproxy.pem
+    mode http
+    default_backend webservers
 
 backend webservers
-        balance roundrobin
-        mode http
-        server 387530-web-01 54.89.57.165:80
-        server 387530-web-02 18.207.142.135:80
+    mode http
+    balance roundrobin
+    server 387530-web-01 54.89.57.165:80
+    server 387530-web-02 18.207.142.135:80
