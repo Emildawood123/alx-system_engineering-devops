@@ -1,0 +1,11 @@
+frontend http_front
+    bind *:80
+    mode http
+    option forwardfor
+    http-request redirect scheme https code 301 if !{ ssl_fc }
+    defualt_backend webservers
+backend webservers
+    mode http
+    balance roundrobin
+    server 387530-web-01 54.89.57.165:80 check
+    server 387530-web-02 18.207.142.135:80 check
