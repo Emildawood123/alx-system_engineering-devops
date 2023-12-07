@@ -1,9 +1,9 @@
 frontend http_front
     bind *:80
+    bind *:443 crt /etc/haproxy/haproxy.cfg
     mode http
-    option forwardfor
     http-request redirect scheme https code 301 if !{ ssl_fc }
-    defualt_backend webservers
+    default_backend webservers
 backend webservers
     mode http
     balance roundrobin
