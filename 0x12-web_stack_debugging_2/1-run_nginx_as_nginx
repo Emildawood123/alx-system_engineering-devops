@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# some edit for protect my server from hacking
+sudo chmod +x /etc/nginx  
+sed -i '1s/.*/user nginx;/' /etc/nginx/nginx.config
+sed -i 's/80/8080/g' /etc/nginx/sites-available/default
+sudo service apache stop
+sudo service nginx restart
