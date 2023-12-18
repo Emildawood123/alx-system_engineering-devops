@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+sudo iptables --table nat \;
+echo '--append PREROUTING \\\n'
+echo '--protocol tcp \\\n'
+echo '--dport 80 \\\n'
+echo '--jump REDIRECT \\\n'
+echo '--to 8080 \\\n'
