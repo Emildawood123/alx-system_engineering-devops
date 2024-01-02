@@ -5,7 +5,8 @@ if __name__ == "__main__":
     import requests
     import sys
     num = int(sys.argv[1])
-    fetch_api = requests.get(f'https://jsonplaceholder.typicode.com/users/{num}')
+    url = f'https://jsonplaceholder.typicode.com/users/{num}'
+    fetch_api = requests.get(url)
     todos = requests.get('https://jsonplaceholder.typicode.com/todos')
     list_of_tasks = []
     count = 0
