@@ -14,14 +14,13 @@ if __name__ == "__main__":
     print(len(dic))
     for i in range(0, 10):
         for todo in todos_dic:
-            if todo["userId"] == i:
+            if todo["userId"] == i + 1:
+                small_dic["username"] = dic[i]["username"]
                 small_dic["task"] = todo["title"]
                 small_dic["completed"] = todo["completed"]
-                small_dic["username"] = dic[i]["username"]
                 list.append(small_dic)
                 small_dic = {}
-        big_dic[str(i +1)] = list
+        big_dic[str(i + 1)] = list
         list = []
     with open("todo_all_employees.json", "w") as f:
         json.dump(big_dic, f)
-

@@ -13,7 +13,6 @@ if __name__ == "__main__":
     big_dic = {}
     small_dic = {}
     list = []
-    print(dic)
     for todo in todos_dic:
         if todo["userId"] == num:
             small_dic["task"] = todo["title"]
