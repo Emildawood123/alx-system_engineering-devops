@@ -15,7 +15,7 @@ if __name__ == "__main__":
     for todo in todos_dic:
         if todo["userId"] == num:
             if todo["completed"] is True:
-                list_of_tasks.append("\t{}".format(todo["title"]))
+                list_of_tasks.append("{}".format(todo["title"]))
                 count += 1
     print("Employee {} is done with tasks({}/20):".format(dic["name"], count))
     for task in list_of_tasks:
