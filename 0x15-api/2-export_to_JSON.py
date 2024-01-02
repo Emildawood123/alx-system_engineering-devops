@@ -13,11 +13,12 @@ if __name__ == "__main__":
     big_dic = {}
     small_dic = {}
     list = []
+    print(dic)
     for todo in todos_dic:
         if todo["userId"] == num:
             small_dic["task"] = todo["title"]
             small_dic["completed"] = todo["completed"]
-            small_dic["username"] = dic["username"]
+            small_dic["username"] = dic[0]["username"]
             list.append(small_dic)
             small_dic = {}
     big_dic[sys.argv[1]] = list
