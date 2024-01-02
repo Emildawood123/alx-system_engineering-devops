@@ -22,4 +22,4 @@ if __name__ == "__main__":
             small_dic = {}
     big_dic[sys.argv[1]] = list
     with open("{}.json".format(num), "w") as f:
-        json.dump(big_dic,f)
+        json.dump(big_dic, f)
