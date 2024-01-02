@@ -2,8 +2,8 @@
 """this for create csv file and write inside"""
 import csv
 import json
-import sys
 import requests
+import sys
 if __name__ == "__main__":
     url = f'https://jsonplaceholder.typicode.com/users/{sys.argv[1]}'
     fetch_user = requests.get(url)
