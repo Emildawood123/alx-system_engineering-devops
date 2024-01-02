@@ -17,7 +17,7 @@ if __name__ == "__main__":
     for todo in todos_dic:
         if todo["userId"] == int(sys.argv[1]):
             list.append("{}".format(int(sys.argv[1])))
-            list.append(f'{dic["name"]}')
+            list.append(f'{dic["username"]}')
             list.append(todo["completed"])
             list.append(todo["title"])
             nest_list.append(list)
