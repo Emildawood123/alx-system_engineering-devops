@@ -16,7 +16,7 @@ if __name__ == "__main__":
     dic = json.loads(fetch_user.content)
     for todo in todos_dic:
         if todo["userId"] == int(sys.argv[1]):
-            list.append("{}".format(sys.argv[1]))
+            list.append("{}".format(int(sys.argv[1])))
             list.append(f'{dic["name"]}')
             list.append(todo["completed"])
             list.append(todo["title"])
