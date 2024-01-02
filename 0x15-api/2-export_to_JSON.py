@@ -22,5 +22,5 @@ if __name__ == "__main__":
             list.append(small_dic)
             small_dic = {}
     big_dic[sys.argv[1]] = list
-    with open(f'{dic["id"]}.json', "w") as f:
+    with open(f'{str(num)}.json', "w") as f:
         json.dump(big_dic, f)
