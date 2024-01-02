@@ -22,5 +22,5 @@ if __name__ == "__main__":
             small_dic = {}
     big_dic[sys.argv[1]] = list
     json_str = json.dumps(big_dic)
-    with open(f'{str(num)}.json', "w") as f:
+    with open(f'{num}.json', "w") as f:
         f.write(json_str)
