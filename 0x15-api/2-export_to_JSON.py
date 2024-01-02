@@ -20,7 +20,7 @@ if __name__ == "__main__":
             small_dic["completed"] = todo["completed"]
             small_dic["username"] = dic["username"]
             list.append(small_dic)
-            small_dic =  {}
+            small_dic = {}
     big_dic[sys.argv[1]] = list
     with open(f'{sys.argv[1]}.json', "w") as f:
         json.dump(big_dic, f)
