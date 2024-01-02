@@ -1,10 +1,9 @@
 #!/usr/bin/python3=
 """gather_data_from_an_API"""
 import json
+import requests
+import sys
 if __name__ == "__main__":
-    import json
-    import requests
-    import sys
     num = int(sys.argv[1])
     url = f'https://jsonplaceholder.typicode.com/users/{sys.argv[1]}'
     fetch_api = requests.get(url)
