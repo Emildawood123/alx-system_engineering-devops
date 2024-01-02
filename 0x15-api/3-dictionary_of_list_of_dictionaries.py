@@ -11,7 +11,6 @@ if __name__ == "__main__":
     big_dic = {}
     small_dic = {}
     list = []
-    print(len(dic))
     for i in range(0, 10):
         for todo in todos_dic:
             if todo["userId"] == i + 1:

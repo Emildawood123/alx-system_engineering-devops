@@ -20,6 +20,6 @@ if __name__ == "__main__":
             small_dic["username"] = dic[0]["username"]
             list.append(small_dic)
             small_dic = {}
-    big_dic[sys.argv[1]] = list
+    big_dic[str(num)] = list
     with open("{}.json".format(num), "w") as f:
         json.dump(big_dic, f)
