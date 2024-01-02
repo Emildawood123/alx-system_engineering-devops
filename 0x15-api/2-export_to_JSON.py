@@ -5,7 +5,7 @@ import requests
 import sys
 if __name__ == "__main__":
     num = int(sys.argv[1])
-    url = f'https://jsonplaceholder.typicode.com/users/{num}'
+    url = f'https://jsonplaceholder.typicode.com/users?id={num}'
     fetch_api = requests.get(url)
     todos = requests.get('https://jsonplaceholder.typicode.com/todos')
     todos_dic = json.loads(todos.content)
