@@ -7,6 +7,8 @@ def number_of_subscribers(subreddit):
     """get number of subscribers from api"""
     url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
     req = requests.get(url)
+    if req.status_code != 200:
+        return 0
     try:
         return req.json().get('data').get('subscribers')
     except Exception:
