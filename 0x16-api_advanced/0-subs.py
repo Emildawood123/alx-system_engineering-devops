@@ -9,7 +9,7 @@ def number_of_subscribers(subreddit):
     req = requests.get(url, headers={'User-Agent': 'MyPythonScript/1.0'})
     if req.status_code != 200:
         return 0
-    try:
+    if (req.json().get('data').get('subscribers') is not None):
         return req.json().get('data').get('subscribers')
-    except Exception:
+    else:
         return 0
