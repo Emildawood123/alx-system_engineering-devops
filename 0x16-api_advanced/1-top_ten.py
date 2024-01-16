@@ -5,7 +5,7 @@ import requests
 
 def top_ten(subreddit):
     """get number of subscribers from api"""
-    url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
+    url = 'https://www.reddit.com/r/{}/hot.json?Limit=10'.format(subreddit)
     h = {'User-Agent': 'MyPythonScript/1.0'}
     req = requests.get(url, headers=h)
     if req.status_code != 200:
