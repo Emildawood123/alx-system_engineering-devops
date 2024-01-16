@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+"""function return from subreddit api"""
+import requests
+
+
+def number_of_subscribers(subreddit):
+    """get number of subscribers from api"""
+    url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
+    req = requests.get(url)
+    try:
+        return req.json().get('data').get('subscribers')
+    except Exception:
+        return 0
