@@ -6,12 +6,12 @@
 file { '/etc/security/limits.conf':
   # Ensure the file exists
   ensure => file,
-  content => replace('4096', '5', file('/etc/security/limits.conf')),
+  content => replace('5', '4096', file('/etc/security/limits.conf')),
 }
 
 
 file { '/etc/security/limits.conf':
   # Ensure the file exists
   ensure => file,
-  content => replace('4096', '4', file('/etc/security/limits.conf')),
+  content => replace('4', '4096', file('/etc/security/limits.conf')),
 }
